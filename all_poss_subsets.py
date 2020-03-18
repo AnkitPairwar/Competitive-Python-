@@ -3,10 +3,9 @@ def poss_subset(inp_set , out_set):
         print(out_set)
         return
 
-    poss_subset(inp_set[1:] , out_set[:])
-    poss_subset(inp_set[1:] , out_set[:] .append(inp_set[0]))
-    return 
+    poss_subset(inp_set[1:] , out_set)
+    poss_subset(inp_set[1:] , out_set[:] + list(inp_set[0]) )
+    return
 
-st =list(map(int ,input().split(',')))
-print(st)
-poss_subset(st , [])
+st =list(map(str,input().split(',')))
+poss_subset(st ,list())
