@@ -8,11 +8,20 @@ def pos(arr):
         arr[1] //= 10
         #print(arr[0])
         #print(res)
-    return res
-def  sets(n):
-    for i in range(n):
-        i,i+1
-
+    print(res)
     return
-#print(pos(list(map(int,(input().split())))))
-print(sets([1,2,3,4]))
+def  sets(n):
+    if len(n)==2:
+        (pos(n))
+        return
+    for i in range(1,len(n)):
+        rep_arr = []
+        rep_arr.append(n[0])
+        rep_arr.append(n[i])
+        (pos(rep_arr))
+    return sets(n[1:])
+
+print(pos(list(map(int,(input().split())))))
+#sets([10101,11100, 11010 ,11100])
+
+#1
