@@ -20,16 +20,17 @@ for(int i=0;i<test_cases;i++){
     }
     //sort(routes,routes.size());
     //res = dp(routes,D);
-    int ind = routes.size()-1;
+    int ind = N - 1;
     while(ind>-1){
-        while(D%routes[ind]!=0){
-            D--;
+        if(D%routes[ind]!=0){
+            D = D - (D%routes[ind]);
         }
-        if (ind==0){
+        ind--;
+        if (ind==-1){
             res = D;
             break;
         }
-        ind--;
+        
         
     }
     //cout<<N;
