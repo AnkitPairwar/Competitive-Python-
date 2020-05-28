@@ -18,7 +18,7 @@ int main() {
     }
 
     for(int i=0;i<test_cases;++i){
-        cout >>"\n"  >>;
+        cout <<  <<endl;
     }
     
     return 0;
