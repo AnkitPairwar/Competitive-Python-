@@ -25,6 +25,7 @@ int main() {
     test{
         set<int> :: iterator itr;
         int n;
+        bool found =false;
         cin >> n;
         set<int> s,k;
         vector<int> check;
@@ -36,22 +37,29 @@ int main() {
 
         fi(i,1,1025){
             int val=0;
+
             for(itr = s.begin();itr!=s.end();++itr){
                 k.insert(*itr);
             }
 
-            f(j,n+1){
-                if(k.find((check[j]^i))==k.end()) val++ ;
+            f(j,n){
+                int norm = check[j]^i; 
+                if(k.find(norm)==k.end()){
+                    val=1;
+                    break;
+                } 
+                else k.erase(k.find(norm));
             }
-            if(val == n) cout << i <<endl;   
+
+            if(val == 0) {
+                cout<<i<<endl;
+                found =true;
+                break;
+            }   
+           // cout << val;
             //if(val>0) cout << val <<endl;
         }
-        /*
-        for(itr =s.begin(); itr!=s.end() ; ++itr){
-                cout << *itr <<endl;
-            }*/
-
-
+        if(!found) cout <<"-1"<<endl;
 
     }    
     return 0;
