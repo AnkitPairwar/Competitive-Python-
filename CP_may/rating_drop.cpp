@@ -50,24 +50,30 @@ int main() {
         int len_n = dectobin(n).length();
         ll sum=0;
         map<int,int> vals;
-        for(int i =0;i<len_n; ++i){
-                 int r = pow(2,i);
+       for(int i =0;i<len_n; ++i){
+                int r = pow(2,i);
                 vals[i] = diff(bin(r,len_n) , bin(r-1,len_n));
                 //cout << r <<endl;
-                cout  <<vals[i] <<endl;
-             }
+                //cout  <<vals[i] <<endl;
+        }
+        for(int i=0;i<len_n;++i){
+            
+        }
+
+
+        //sum += ceil(n/2)+1;
+        //cout << sum << endl;
+        /*
+        int garb = len_n - (pow(,len_n));
+        sum=2*n-garb; */
+        for(int i =0;i<len_n; ++i){
+                sum+=
+                //cout << r <<endl;
+                //cout  <<vals[i] <<endl;
+        }
         
-        f(i,n){
-            if(i%)
-        sum+=vals[]    
-            
-
-            
-
-    }
-            //cout  <<diff(bin(i,len_n) , bin(i+1,len_n)) <<endl; 
-             
-             
+    
+            //cout  <<diff(bin(i,len_n) , bin(i+1,len_n)) <<endl;          
     cout << sum << endl;
     }    
     return 0;
