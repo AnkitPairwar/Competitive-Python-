@@ -20,7 +20,20 @@
 
 using namespace std;
 int main() {
-    
+    int n,sum=0,val=0,cnt=0;vector <int> coins;
+    cin >> n;
+    f(i,n){
+        int t;cin >> t ; coins.pb(t);
+        sum+=t;
+    }    
+    //cout << floor(sum/2);
+    sort(coins.begin(),coins.end());
+    fd(i,n){
+        //cout << val << endl;
+        if((val+=coins[i]) > (sum/2)){ cout << ++cnt <<endl; break;}
+        else cnt++;
+    }
+
     return 0;
 
 }

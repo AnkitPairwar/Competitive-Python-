@@ -10,8 +10,8 @@
 #include <set>
 #define ll long long
 #define test int t;cin>> t;while(t--)
-#define Y "Yes"
-#define N "No"
+#define Y "YES"
+#define N "NO"
 #define pb push_back
 #define pp pop_back
 #define f(i,n) for(int i=0;i<n;++i)
@@ -21,6 +21,22 @@
 using namespace std;
 int main() {
     
+    string s;
+    cin >> s;
+    string h = "hello";
+    int n = s.length(),ind =0;
+    f(i,n){
+        //cout << s [i] <<" " <<h[ind] << endl;
+        if(s[i] == h[ind]) {
+            ind++;
+            if(ind ==5) break;
+            else continue;
+        }
+        
+    }
+    if(ind ==5) cout << Y <<endl;
+    else cout << N << endl;
+        
     return 0;
 
 }
