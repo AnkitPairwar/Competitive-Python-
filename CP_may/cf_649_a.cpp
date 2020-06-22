@@ -8,7 +8,6 @@
 #include <map>
 #include <queue>
 #include <set>
-#include <unordered_map>
 #define ll long long
 #define test int t;cin>> t;while(t--)
 #define Y "Yes"
@@ -19,35 +18,40 @@
 #define fd(i,n) for(int i=n-1;i>=0;--i)
 //#include <cstudio>
 
+int sumnotdivbyx(int sum , int x,int l){
+    if(sum % x  != 0) return l;
+    else return -1;
+}
+
+
 using namespace std;
 int main() {
     test{
-
-        int n,x,sum=0,max_strk=0,curr_strk=0;vector<int> arr;
+        int n,x,tot_sum=0,ans,s;
         cin >> n >> x;
-        int m[n];
+        vector<int> v;
         f(i,n){
-        int t;cin >>t;arr.pb(t);
+            int t;cin>>t;v.pb(t);tot_sum=(tot_sum+t);
+        }
+        if(tot_sum%x!=0) cout << n << endl;
+        else{
+            int ans =-1, sum=tot_sum;
+            f(i,n){
+                if((sum-v[i])%x!=0) {//cout <<n-i-1 <<"es" <<endl;
+                ans = n-i-1;break;} 
+
+            }
+            fd(i,n){
+                if((sum-v[i])%x!=0) {//cout <<"no" <<endl;
+                ans = max(ans,i);break;}    
+            }
+            cout << ans << endl;
         }
 
-        f(i,n){
-            sum+=arr[i];
-            m[i] =sum%x;
-        }
-
-        unordered_map<int, int>um;
-        f(i,n){
-            if(m[i] != 0) curr_strk++;
-            else if(um.find(m[i]) == um.end()) um[m[i]] =i;
-            else
-            {max_strk=max_strk>i-um[m[i]]?max_strk:1-um[m[i]];
-        }
-        max_strk =(max_strk,curr_strk);
-        }
-
-        if(max_strk!=0)cout << max_strk <<endl;
-        else {max_strk =-1;cout<<max_strk<<endl;}
+        //if(max_l!=0)cout << max_l <<endl;
+        //else cout << -1<<endl;
     }
+
     return 0;
 
 }
