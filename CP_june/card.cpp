@@ -20,26 +20,20 @@
 
 using namespace std;
 int main() {
-    test{
-        int n,ans;
-        vector<int> v,res_v;
-        cin>>n;
-        f(i,n){
-            int t;cin>>t;v.pb(t);
-        }
-        f(i,n){
-            if(i == 0 || i == n-1 || (v[i]>v[i-1] && v[i] >v[i+1]) || (v[i]<v[i-1] && v[i]<v[i+1])){
-                res_v.pb(v[i]);
-            }
-        }
-        ans = res_v.size();
-        cout << ans << endl;
-        f(i,ans){
-            cout <<res_v[i] << " ";
-        }
-        cout <<"\n";
+    int n;vector<int> ace;
+    cin >>n;
+    string s;
+    cin>> s;
+    map<char ,int> m;
+    vector<char> v;
+    v.pb('z');v.pb('e');v.pb('r');v.pb('o');v.pb('n');
+    f(i,n){
+        ++m[s[i]];
     }
-    
+    f(i,m['e']){
+        if(m['n']>0){ cout <<1<<" " ; --m['n'];}
+        else  cout <<0<<" " ;
+    }
     return 0;
 
 }

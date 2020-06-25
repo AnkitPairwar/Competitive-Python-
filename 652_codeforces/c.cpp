@@ -17,29 +17,24 @@
 #define f(i,n) for(int i=0;i<n;++i)
 #define fd(i,n) for(int i=n-1;i>=0;--i)
 //#include <cstudio>
-
 using namespace std;
 int main() {
     test{
-        int n,ans;
-        vector<int> v,res_v;
-        cin>>n;
-        f(i,n){
-            int t;cin>>t;v.pb(t);
+        int n,f;
+        cin >>n>>f;
+        vector<int> v,w;
+        f(i,n)
+        {int t;cin>>t;
+            v.pb(t);
         }
-        f(i,n){
-            if(i == 0 || i == n-1 || (v[i]>v[i-1] && v[i] >v[i+1]) || (v[i]<v[i-1] && v[i]<v[i+1])){
-                res_v.pb(v[i]);
-            }
-        }
-        ans = res_v.size();
-        cout << ans << endl;
-        f(i,ans){
-            cout <<res_v[i] << " ";
-        }
-        cout <<"\n";
-    }
-    
+        f(i,f)
+        {
+            int t;cin>>t;w.pb(t);
+        } 
+
+
+
+    }    
     return 0;
 
 }

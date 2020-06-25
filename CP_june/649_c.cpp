@@ -8,6 +8,7 @@
 #include <map>
 #include <queue>
 #include <set>
+#include <iterator>
 #define ll long long
 #define test int t;cin>> t;while(t--)
 #define Y "Yes"
@@ -20,26 +21,13 @@
 
 using namespace std;
 int main() {
-    test{
-        int n,ans;
-        vector<int> v,res_v;
-        cin>>n;
-        f(i,n){
-            int t;cin>>t;v.pb(t);
-        }
-        f(i,n){
-            if(i == 0 || i == n-1 || (v[i]>v[i-1] && v[i] >v[i+1]) || (v[i]<v[i-1] && v[i]<v[i+1])){
-                res_v.pb(v[i]);
-            }
-        }
-        ans = res_v.size();
-        cout << ans << endl;
-        f(i,ans){
-            cout <<res_v[i] << " ";
-        }
-        cout <<"\n";
-    }
+    int n;
+    set<int> s,res;
+    set<int> :: iterator itr;
+    cin >> n;
     
+
+
     return 0;
 
 }
